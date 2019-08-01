@@ -15,5 +15,5 @@ namespace SpaceTradeGame
             new Game().run();
         }
     }
-}   ///////what the hell is this 
+}   
     

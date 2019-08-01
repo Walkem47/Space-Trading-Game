@@ -15,8 +15,7 @@ namespace SpaceTradeGame
         public void gameTitle()
         {
             Console.WriteLine($"Welcome Space Trading, {character.name} ");
-            Console.WriteLine($"You are an {character.age} year old");
-
+            Console.WriteLine($"You are an {character.age} year old with {character.currency} Atoms in your account.");
             Console.WriteLine("Press 'Enter' to begin game. ");
             Console.ReadLine();
             Console.Clear();
@@ -25,10 +24,10 @@ namespace SpaceTradeGame
 
         public void first()
         {
-            Console.WriteLine("You start your journey in at your ship.");
+            Console.WriteLine("Your journey begins on your ship.");
             Console.WriteLine(" What do you want to do next?");
             Console.WriteLine(" 1. Go to your factory?");
-            Console.WriteLine(" 2. Go to Starbucks? ");
+            Console.WriteLine(" 2. View your account? ");
             Console.WriteLine(" 3. visit another planet? ");
             Console.Write("Choice: ");
             var choice = Console.ReadLine().ToLower();
@@ -37,14 +36,18 @@ namespace SpaceTradeGame
             switch (choice)
             {
                 case "1":
+                    Console.WriteLine(" Welcome back to your factory.");
+                    break; 
                 case "2":
+                    Console.WriteLine($" You now have {character.currency} Atoms");
+                    Console.WriteLine(" Earn more Atoms as you travel the universe and battle or trade your goods."); 
+                    break; 
                 case "3":
+                    Console.WriteLine("Which planet would you like to visit?"); 
+                    break; 
                     //Come up with statements that explain the outcome of your choice. 
                     {
-                        Console.WriteLine(" ");
-                        Console.WriteLine(" ");
-                        Console.WriteLine(" ");
-                        Console.WriteLine(" ");
+                        
                         Console.WriteLine("Press 'Enter' to continue");
                         Console.ReadLine();
                         gameOver();
