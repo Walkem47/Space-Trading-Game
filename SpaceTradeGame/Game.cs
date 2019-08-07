@@ -6,13 +6,14 @@ namespace SpaceTradeGame
 {
     class Game
     {
-        CharacterClass character = new CharacterClass(); 
+        CharacterClass character = new CharacterClass();
+        Planet name = new Planet(); 
         public void run()
         {
-            gameTitle();
+            gameIntro();
         }
 
-        public void gameTitle()
+        public void gameIntro()
         {
             Console.WriteLine($"Welcome Space Trading, {character.name} ");
             Console.WriteLine($"You are an {character.age} year old with {character.currency} Atoms in your account.");
@@ -24,7 +25,7 @@ namespace SpaceTradeGame
 
         public void first()
         {
-            Console.WriteLine("Your journey begins on your ship.");
+            Console.WriteLine($"Your journey begins on your ship, on");
             Console.WriteLine(" What do you want to do next?");
             Console.WriteLine(" 1. Go to your factory?");
             Console.WriteLine(" 2. View your account? ");
@@ -54,6 +55,9 @@ namespace SpaceTradeGame
                         break;
 
                     }
+
+
+
 
             }
         }

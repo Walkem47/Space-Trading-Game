@@ -15,7 +15,7 @@ namespace SpaceTradeGame
         public Planet location { get; set; }
         public char appearance { get; set; }
         public string name { get; }
-        public class List<InventoryItem> 
+        
 
 
         public CharacterClass()
@@ -23,6 +23,7 @@ namespace SpaceTradeGame
             name = "Elon";
             age = 18;
             currency = 3000000;
+             
         }
          
         
