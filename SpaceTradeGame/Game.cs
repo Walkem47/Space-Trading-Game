@@ -7,7 +7,7 @@ namespace SpaceTradeGame
     class Game
     {
         CharacterClass character = new CharacterClass();
-        Planet name = new Planet(); 
+        Planet name = new Planet();
         public void run()
         {
             gameIntro();
@@ -39,20 +39,22 @@ namespace SpaceTradeGame
                 case "1":
                     Console.WriteLine(" Welcome back to your ship factory.");
                     Console.ReadLine();
-                    second(); 
-                    break; 
+                    second();
+                    break;
                 case "2":
                     Console.WriteLine($" You have {character.currency} Atoms in your account.");
                     Console.WriteLine(" Earn more Atoms as you travel the universe and battle or trade your goods.");
-                    second();
-                    break; 
+                    third();
+                    break;
                 case "3":
                     Console.WriteLine("Which planet would you like to visit?");
+                    Console.WriteLine("1. Mars");
+                    Console.WriteLine("2. Alpha Proxima");
                     Console.Write("Choice:  ");
                     _ = Console.ReadLine().ToLower();
                     Console.Clear();
-                    second(); 
-                    break; 
+                    third();
+                    break;
 
             }
         }
@@ -60,9 +62,50 @@ namespace SpaceTradeGame
         public static void second()
         {
             Random rnd = new Random();
-            string[] secOptions = { "You notice a bomb, do you cut the red wire?", "You notice that you are overproduction, you " +
-                    "travel to other planets to sell your ships" ,"dfgdasdgdsg"};
-            
+            string[] secOptions = { "You notice a bomb, do you cut the red wire?", "You notice that you are overproduction, would you like to " +
+                    "travel to other planets to sell your ships?"};
+
+            int randomNumber = rnd.Next(0, 2);
+            string secText = secOptions[randomNumber];
+
+            string secChoice;
+
+            Console.WriteLine(secText);
+            Console.WriteLine("Yes or No?");
+            Console.WriteLine("Choice: ");
+            secChoice = Console.ReadLine().ToLower();
+
+            if (secChoice == "yes" || secChoice == "yes")
+            {
+                second();
+
+            }
+            else if (secChoice == "no" || secChoice == "n")
+            {
+                Console.WriteLine(" An asteroid slams into planet earth and destroys everything.");
+                Console.WriteLine("Game Over" );
+                Console.WriteLine("Press 'Enter' to continue");
+                Console.ReadLine();
+
+
+            }
+            else
+            {
+                Console.WriteLine(" ");
+            }
+
+
+
+
+
+
+        }
+        static void third()
+        {
+            Random rnd = new Random();
+            string[] secOptions = { "Before you go, would you like a cup of coffee?", "Before you go, would you like to check your inventory?", " Before " +
+                    "you go, would you like to eat something?"};
+
             int randomNumber = rnd.Next(0, 3);
             string secText = secOptions[randomNumber];
 
@@ -75,40 +118,30 @@ namespace SpaceTradeGame
 
             if (secChoice == "yes" || secChoice == "yes")
             {
-                third(); 
+                third();
 
             }
             else if (secChoice == "no" || secChoice == "n")
             {
-                Console.WriteLine(" An asteroid slams into planet earth and destroys everything.");
-                Console.WriteLine("Press 'Enter' to continue");
+                Console.WriteLine(" You should have said yes.");
+                Console.WriteLine("You suffer a heart attack");
+                Console.WriteLine("You're dead");
+                Console.WriteLine("Game OVER, Press 'Enter' to continue");
                 Console.ReadLine();
-               
+
 
             }
-            else
+
+
+
+           // public void gameOver()
             {
-                Console.WriteLine(" ");
+                throw new NotImplementedException();
             }
 
-            
-                
-          
 
-           
-        }
-        static void third()
-        { }
-
-
-
-        private void gameOver()
-        {
-            throw new NotImplementedException();
         }
 
 
     }
-
-   
 }
